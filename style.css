@@ -1,0 +1,266 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: #f9f9f9;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.container {
+  max-width: 2500px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.logo-bold {
+  font-weight: 700;
+  color: #f90000;
+}
+
+/* NAVIGATION */
+nav a {
+  color: #444;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f90000;
+}
+
+/* INTRO */
+.intro {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.intro p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* CONTENU GLOBAL */
+.contenu {
+  display: flex;
+  gap: 2rem;
+  max-width: 2500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* FILTRES */
+.filtres {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.filtres-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e2e2;
+}
+
+.filtres-container h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #f90000;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.filtre-bloc {
+  margin-bottom: 1.5rem;
+}
+
+.filtre-titre {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.filtre-bloc label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.filtre-bloc input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+select {
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #111;
+}
+
+select:focus {
+  outline: none;
+  border-color: #f90000;
+}
+
+/* ANNONCES */
+.annonces {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  align-items: start;
+  align-self: flex-start;
+}
+
+.annonce {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.annonce:hover {
+  box-shadow: 0 0 20px rgba(249, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.annonce img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.info {
+  padding: 15px;
+}
+
+.info h2 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.info p {
+  font-size: 14px;
+  color: #666;
+}
+
+.prix {
+  color: #f90000;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+  background-color: #f1f1f1;
+  margin-top: 40px;
+}
+
+/* A PROPOS */
+.a-propos {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  line-height: 1.8;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.a-propos h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+/* MENTIONS */
+.mentions p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .contenu {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .filtres {
+    width: 100%;
+  }
+
+  .filtres-container {
+    flex-direction: column;
+  }
+
+  .annonces {
+    grid-template-columns: 1fr;
+  }
+}
