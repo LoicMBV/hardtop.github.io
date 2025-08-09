@@ -232,10 +232,13 @@ footer {
   margin-bottom: 1rem;
   line-height: 1.6;
 }
+
+
+
 /* Slider — règles robustes */
 .slider {
   position: relative;
-  max-width: 900px;    /* ajuste selon ton design */
+  max-width: 700px;    /* ajuste selon ton design */
   margin: 18px auto;
   overflow: hidden;
   border-radius: 8px;
@@ -266,7 +269,6 @@ footer {
   display: block;
   object-fit: contain; /* conserve l'image entière */
   border-radius: 10px;
-  /*max-height: 70vh;     évite que l'image ne prenne toute la fenêtre */
 }
 
 /* Flèches */
