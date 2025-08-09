@@ -38,7 +38,7 @@ header {
 
 .logo-bold {
   font-weight: 700;
-  color: #f90000;
+  color: #0000FC;
 }
 
 /* NAVIGATION */
@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #f90000;
+  color: #BABABA;
 }
 
 /* INTRO */
@@ -101,7 +101,7 @@ nav a:hover {
 .filtres-container h2 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #f90000;
+  color: #0000FC;
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5rem;
 }
@@ -140,7 +140,7 @@ select {
 
 select:focus {
   outline: none;
-  border-color: #f90000;
+  border-color: #0000FC;
 }
 
 /* ANNONCES */
@@ -194,7 +194,7 @@ select:focus {
 }
 
 .prix {
-  color: #f90000;
+  color: #0000FC;
   font-weight: bold;
   margin-top: 8px;
 }
@@ -207,24 +207,6 @@ footer {
   color: #777;
   background-color: #f1f1f1;
   margin-top: 40px;
-}
-
-/* A PROPOS */
-.a-propos {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 10px;
-  line-height: 1.8;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.a-propos h1 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #111;
 }
 
 /* MENTIONS */
