@@ -19,7 +19,7 @@ function afficherAnnonces(annonces) {
     const div = document.createElement('div');
     div.className = 'annonce';
     div.innerHTML = `
-      <a href="${annonce.DataUrl}">
+      <a href="${annonce.dataUrl}">
         <img src="${annonce.image}" alt="${annonce.title}" />
         <div class="info">
           <h2>${annonce.title}</h2>
