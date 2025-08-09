@@ -265,7 +265,8 @@ footer {
   height: auto !important;
   display: block;
   object-fit: contain; /* conserve l'image entière */
-  max-height: 70vh;    /* évite que l'image ne prenne toute la fenêtre */
+  border-radius: 10px;
+  /*max-height: 70vh;     évite que l'image ne prenne toute la fenêtre */
 }
 
 /* Flèches */
