@@ -9,6 +9,49 @@
   <link rel="stylesheet" href="/hardtop/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
   <!--<link rel="icon" type="image/png" href="/LA.png">-->
+    <style>
+    /* Styles spécifiques au slider */
+    .slider {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .fiche-content {
+      max-width: 800px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .fiche-content h1 {
+      text-align: center;
+    }
+    .fiche-content p {
+      margin: 5px 0;
+    }
+  </style>
 </head>
 <body>
 <header>
