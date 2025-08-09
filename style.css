@@ -232,6 +232,65 @@ footer {
   margin-bottom: 1rem;
   line-height: 1.6;
 }
+/* Slider — règles robustes */
+.slider {
+  position: relative;
+  max-width: 900px;    /* ajuste selon ton design */
+  margin: 18px auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* La ligne suivante garantit que .slides fait exactement N * 100% */
+.slides {
+  display: flex;
+  width: 100%;
+  transition: transform 0.35s ease-in-out;
+  will-change: transform;
+}
+
+/* Chaque "case" prend 100% de la largeur du slider */
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px; /* optionnel : espace autour de l'image */
+}
+
+/* L'image conserve son ratio, pas d'étirement */
+.slide img {
+  max-width: 100%;
+  height: auto !important;
+  display: block;
+  object-fit: contain; /* conserve l'image entière */
+  max-height: 70vh;    /* évite que l'image ne prenne toute la fenêtre */
+}
+
+/* Flèches */
+.slider .prev, .slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 5;
+}
+.slider .prev { left: 8px; }
+.slider .next { right: 8px; }
+
+/* Responsive : sur petit écran réduire la taille max */
+@media (max-width: 600px) {
+  .slider { max-width: 100%; }
+  .slide { padding: 4px; }
+  .slider .prev, .slider .next { padding: 6px 8px; font-size: 18px; }
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
