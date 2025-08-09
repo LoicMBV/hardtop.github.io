@@ -9,50 +9,6 @@
   <link rel="stylesheet" href="/hardtop/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
   <!--<link rel="icon" type="image/png" href="/LA.png">-->
-    <style>
-    /* Styles spécifiques au slider */
-    .slider {
-      position: relative;
-      max-width: 700px;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-    .slides {
-      display: flex;
-      transition: transform 0.3s ease-in-out;
-    }
-    .slides img {
-      height: auto;
-  flex-shrink: 0;
-  object-fit: contain;
-    }
-    .slider button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 18px;
-    }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-    .fiche-content {
-      max-width: 800px;
-      margin: 20px auto;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    .fiche-content h1 {
-      text-align: center;
-    }
-    .fiche-content p {
-      margin: 5px 0;
-    }
-  </style>
 </head>
 <body>
 <header>
@@ -67,14 +23,14 @@
 
 <main>
   <!-- SLIDER -->
-  <div class="slider">
+  <div class="slider" aria-label="Galerie images">
     <div class="slides">
-      <img src="/hardtop/images/5a2870f93cfaa42c83c864a25ae74b0040767989.jpg" alt="Hardtop Mercedes class X-1">
-      <img src="/hardtop/images/43118e981af2a59013fdf29ccfd5794fe07af258.jpg" alt="Hardtop Mercedes class X-2">
-      <img src="/hardtop/images/4a6582d7e928ab10065b8f3704067265b6af46eb.jpg" alt="Hardtop Mercedes class X-3">
+    <div class="slide"><img src="/images/5a2870f93cfaa42c83c864a25ae74b0040767989.jpg" alt="Hardtop Mercedes class X - vue 1"></div>
+    <div class="slide"><img src="/images/43118e981af2a59013fdf29ccfd5794fe07af258.jpg" alt="Hardtop Mercedes class X - vue 2"></div>
+    <div class="slide"><img src="/images/4a6582d7e928ab10065b8f3704067265b6af46eb.jpg" alt="Hardtop Mercedes class X - vue 3"></div>
     </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
+  <button class="prev" aria-label="Image précédente">&#10094;</button>
+  <button class="next" aria-label="Image suivante">&#10095;</button>
   </div>
 
   <!-- TEXTE -->
@@ -98,27 +54,43 @@
 <!-- SCRIPT SLIDER -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const slides = document.querySelector(".slides");
+  const slidesWrap = document.querySelector(".slides");
+  const slides = document.querySelectorAll(".slide");
   const prev = document.querySelector(".prev");
   const next = document.querySelector(".next");
-  let index = 0;
-  const total = slides.children.length;
+  if(!slidesWrap || slides.length === 0) return;
 
-  function updateSlide() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
+  let index = 0;
+  const total = slides.length;
+
+  function update() {
+    // translateX en pourcent relatif à une slide = 100% * index
+    slidesWrap.style.transform = `translateX(-${index * 100}%)`;
   }
 
-  next.addEventListener("click", () => {
-    index = (index + 1) % total;
-    updateSlide();
-  });
+  next.addEventListener("click", () => { index = (index + 1) % total; update(); });
+  prev.addEventListener("click", () => { index = (index - 1 + total) % total; update(); });
 
-  prev.addEventListener("click", () => {
-    index = (index - 1 + total) % total;
-    updateSlide();
+  // Permet d'ajuster si l'utilisateur redimensionne la fenêtre
+  window.addEventListener("resize", update);
+
+  // Assure un positionnement correct après chargement complet des images
+  // (évite les cas où le slider se calcule avant que les images aient chargé)
+  const images = slidesWrap.querySelectorAll("img");
+  let imagesLoaded = 0;
+  images.forEach(img => {
+    if (img.complete) {
+      imagesLoaded++;
+    } else {
+      img.addEventListener('load', () => { imagesLoaded++; if(imagesLoaded === images.length) update(); });
+      img.addEventListener('error', () => { imagesLoaded++; if(imagesLoaded === images.length) update(); });
+    }
   });
+  // si déjà chargées
+  if(imagesLoaded === images.length) update();
 });
 </script>
+
 
 </body>
 </html>
