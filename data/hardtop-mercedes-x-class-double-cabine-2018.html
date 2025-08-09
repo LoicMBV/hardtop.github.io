@@ -1,57 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="Description" content="Composit System - Hardtop Mercedes class X">
   <title>Mercedes class X</title>
-  <meta name="COmposit System" content="Hardtop Mercedes class X">
-  <link rel="stylesheet" href="/style.css">
-  <style>
-    /* Styles spécifiques au slider */
-    .slider {
-      position: relative;
-      max-width: 800px;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-    .slides {
-      display: flex;
-      transition: transform 0.3s ease-in-out;
-    }
-    .slides img {
-      width: 100%;
-      flex-shrink: 0;
-    }
-    .slider button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 18px;
-    }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-    .fiche-content {
-      max-width: 800px;
-      margin: 20px auto;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    .fiche-content h1 {
-      text-align: center;
-    }
-    .fiche-content p {
-      margin: 5px 0;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <!--<link rel="icon" type="image/png" href="/LA.png">-->
 </head>
 <body>
-
 <header>
   <div class="container">
     <h1 class="logo"><span class="logo-bold">Composit</span> System</h1>
@@ -66,16 +24,16 @@
   <!-- SLIDER -->
   <div class="slider">
     <div class="slides">
-      <img src="images/5a2870f93cfaa42c83c864a25ae74b0040767989.jpg" alt="Hardtop Mercedes class X-1">
-      <img src="images/43118e981af2a59013fdf29ccfd5794fe07af258.jpg" alt="Hardtop Mercedes class X-2">
-      <img src="images/4a6582d7e928ab10065b8f3704067265b6af46eb.jpg" alt="Hardtop Mercedes class X-3">
+      <img src="/images/5a2870f93cfaa42c83c864a25ae74b0040767989.jpg" alt="Hardtop Mercedes class X-1">
+      <img src="/images/43118e981af2a59013fdf29ccfd5794fe07af258.jpg" alt="Hardtop Mercedes class X-2">
+      <img src="/images/4a6582d7e928ab10065b8f3704067265b6af46eb.jpg" alt="Hardtop Mercedes class X-3">
     </div>
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
   </div>
 
   <!-- TEXTE -->
-  <div class="fiche-content">
+  <div class="contact">
     <h1>Hardtop Mercedes class X</h1>
     <p><strong>Hardtop pour Mercedes X class double cabine 2018.</strong></p>
     <p>Structure materiaux composite integrale.</p>
@@ -89,7 +47,7 @@
 </main>
 
 <footer>
-  <p>&copy; 2025 Composit System</p>
+  <p>&copy; 2025 Composit System - <a href="/mentions-legales.html">Mentions légales</a></p>
 </footer>
 
 <!-- SCRIPT SLIDER -->
