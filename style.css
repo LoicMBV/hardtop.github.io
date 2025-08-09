@@ -199,6 +199,24 @@ select:focus {
   margin-top: 8px;
 }
 
+/* Contact */
+.contact {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  line-height: 1.8;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
